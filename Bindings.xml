@@ -1,0 +1,14 @@
+<Bindings>
+    <Binding name="BattlePetLeash_SUMMON" header="BattlePetLeash">
+        BattlePetLeash:ResummonPet()
+    </Binding>
+    <Binding name="BattlePetLeash_DESUMMON">
+        BattlePetLeash:DismissPet()
+    </Binding>
+	<Binding name="BattlePetLeash_TOGGLE">
+		BattlePetLeash:TogglePet()
+	</Binding>
+	<Binding name="BattlePetLeash_CONFIG">
+		BattlePetLeash:OpenOptions()
+	</Binding>
+</Bindings>

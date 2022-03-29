@@ -1,0 +1,21 @@
+## Interface: 90200
+## Title: BattlePetLeash
+## Version: 1.0.0
+## Notes: RIP PetLeash
+## Author: NoSpoonz
+## X-Email: jacob.russell.reed@gmail.com
+## X-Credits: Various Translators
+## X-Category: Miscellaneous
+## SavedVariables: BattlePetLeash3DB
+## OptionalDeps: Ace3, LibAboutPanel, LibPetJournal-2.0, LibDBIcon-1.0
+embeds.xml
+locales.xml
+BattlePetLeash.lua
+PetSelect.lua
+Options.lua
+Filters.lua
+Triggers.lua
+Ready.lua
+SwitchTimer.lua
+SpecialItems.lua
+Broker.lua
