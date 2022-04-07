@@ -64,7 +64,7 @@ local options = {
                     type = "group",
                     order = 10,
                     get = function(info) return addon.db.profile[info[#info]] end,
-                    set = function(info, val) 
+                    set = function(info, val)
                         addon.db.profile[info[#info]] = val
                         addon.Ready:UpdateChecks()
                     end,
@@ -72,7 +72,7 @@ local options = {
                         enable = {
                             type = "toggle",
                             name = ENABLE,
-                            desc = L["Enable Auto-Summon"], 
+                            desc = L["Enable Auto-Summon"],
                             order = 10,
                             width = "full",
                             get = function(info) return addon:IsEnabledSummoning() end,
@@ -145,7 +145,7 @@ local options = {
                             end,
                             set = function(info,v)
                                 addon.db.profile.waitTimer = v
-                            end  
+                            end
                         },
                         verbose = {
                             type = "toggle",
@@ -288,9 +288,9 @@ function module:OnInitialize()
     self.options = options
     self.options.args.profiles = AceDBOptions:GetOptionsTable(self.db)
     self.options_slashcmd = options_slashcmd
-    
+
     AceConfig:RegisterOptionsTable(addon.name, options)
-    AceConfig:RegisterOptionsTable(addon.name .. "SlashCmd", options_slashcmd, {"BattlePetLeash", "pl"})
+    AceConfig:RegisterOptionsTable(addon.name .. "SlashCmd", options_slashcmd, {"BattlePetLeash", "bpl"})
 
     -- this runs before the addon list is updated
     hooksecurefunc("InterfaceCategoryList_Update", function() self:SetupOptions() end)
@@ -370,19 +370,19 @@ do
     end
 
     do
-        -- 
+        --
         -- mainPage (List)
         --
 
         local function newSet_onEnterPressed(frame, event, value)
             value = string.gsub(value, "^%s*(.-)%s*$", "%1")
-        
+
             if #value == 0 or strfind(value, "^%$") then
                 -- TODO show a message
                 PlaySound("igPlayerInviteDecline")
                 return
             end
-        
+
             addon:NewSet(value)
             mainPage_FillList(frame:GetUserData("mainPage"))
 
@@ -443,8 +443,8 @@ do
         end
     end
 
-    do 
-        -- 
+    do
+        --
         -- mainPage
         --
 
@@ -705,7 +705,7 @@ do
                     deleteButton:SetUserData("settings", settings)
                     deleteButton:SetUserData("i", fti)
                     footerGroup:AddChild(deleteButton)
-                    
+
                     frame:AddChild(group)
                 end
 
@@ -782,7 +782,7 @@ do
 
                 local scroll = AceGUI:Create("ScrollFrame")
                 scroll:SetLayout("Flow")
-                
+
                 local renameHeading = AceGUI:Create("Heading")
                 renameHeading:SetText("Rename")
                 renameHeading:SetFullWidth(true)
@@ -870,7 +870,7 @@ do
                 widget = AceGUI:Create("MultiLineEditBox")
             else
                 widget = AceGUI:Create("EditBox")
-            end 
+            end
             widget:SetCallback("OnEnterPressed", widget_execute)
 
             if tmpOpt.name then
@@ -879,7 +879,7 @@ do
         elseif widgetType == "toggle" then
             widget = AceGUI:Create("CheckBox")
             widget:SetCallback("OnValueChanged", widget_execute)
-            
+
             if tmpOpt.name then
                 widget:SetLabel(tmpOpt.name)
             end
