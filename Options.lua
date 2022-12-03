@@ -293,7 +293,7 @@ function module:OnInitialize()
     AceConfig:RegisterOptionsTable(addon.name .. "SlashCmd", options_slashcmd, {"BattlePetLeash", "bpl"})
 
     -- this runs before the addon list is updated
-    hooksecurefunc("InterfaceCategoryList_Update", function() self:SetupOptions() end)
+    hooksecurefunc("AddonList_HasAnyChanged", function() self:SetupOptions() end)
 end
 
 function module:OpenOptions()
